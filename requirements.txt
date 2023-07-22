@@ -5,3 +5,4 @@ mypy
 openai
 pylint
 python-dotenv
+pandas
