@@ -1,0 +1,3 @@
+[submodule "data/aituber_question_dataset"]
+	path = data/aituber_question_dataset
+	url = git@github.com:sr2mg/aituber_question_dataset.git
