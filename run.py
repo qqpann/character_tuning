@@ -1,24 +1,6 @@
-import os
-
-import openai
-from dotenv import load_dotenv
-
-load_dotenv()
-
-openai.organization = os.getenv("OPENAI_ORGANIZATION")
-openai.api_key = os.getenv("OPENAI_API_KEY")
+from model import chat
 
 DEBUG = True
-
-
-def chat(message: str):
-    # create a chat completion
-    chat_completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo", messages=[{"role": "user", "content": message}]
-    )
-
-    # return the chat completion
-    return chat_completion.choices[0].message.content
 
 
 def main():
