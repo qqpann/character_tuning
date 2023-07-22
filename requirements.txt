@@ -1,0 +1,7 @@
+black
+click
+isort
+mypy
+openai
+pylint
+python-dotenv
