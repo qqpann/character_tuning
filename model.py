@@ -3,6 +3,9 @@ import os
 import openai
 from dotenv import load_dotenv
 
+# HINT: you may just import your model
+# from model.your_model import chat
+
 load_dotenv()
 
 openai.organization = os.getenv("OPENAI_ORGANIZATION")
