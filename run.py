@@ -3,13 +3,13 @@ from tqdm import tqdm
 
 from model import chat
 
-DEBUG = True
+LIM = 10
 
 
 def main():
     df = pd.DataFrame(columns=["question", "ai_answer", "modified_answer"])
     with open("data/aituber_question_dataset/question.txt", "r") as f:
-        for line in tqdm(f.readlines()):
+        for i, line in enumerate(tqdm(f.readlines()), start=1):
             line = line.strip()
             question = line
             ai_answer = chat(line)
@@ -23,7 +23,7 @@ def main():
                 ignore_index=True,
             )
 
-            if DEBUG:
+            if i >= LIM:
                 break
     df.to_csv(f"out/question_answer.csv", index=False)
 
